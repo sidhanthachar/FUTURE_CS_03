@@ -1,0 +1,150 @@
+API SECURITY RISK ANALYSIS REPORT
+
+Target API:
+JSONPlaceholder Test API
+
+Assessment Type:
+Read-Only API Security Risk Analysis
+
+Objective:
+To analyze public API endpoints, identify potential security risks, review authentication and data exposure practices, and provide remediation recommendations using ethical and non-intrusive methods.
+
+Tools Used:
+
+* Browser DevTools
+* Public API Endpoints
+* Browser Inspection Tools
+* Documentation & Reporting Tools
+
+Scope:
+
+* Public API endpoint inspection
+* Response analysis
+* Authentication observation
+* Data exposure review
+* Risk classification
+* Security recommendations
+
+Methodology:
+
+1. Selection of public API endpoints
+2. Inspection of API responses
+3. Analysis of exposed data
+4. Authentication review
+5. Risk identification
+6. Risk classification
+7. Documentation of findings
+
+---
+
+TESTED API ENDPOINTS
+
+1. /users
+   Endpoint:
+   https://jsonplaceholder.typicode.com/users
+
+Observation:
+The endpoint publicly exposes user-related information without authentication requirements.
+
+Potential Risk:
+Public exposure of user information may increase privacy and data exposure risks if implemented similarly in production systems.
+
+Risk Level:
+Medium
+
+---
+
+2. /posts
+   Endpoint:
+   https://jsonplaceholder.typicode.com/posts
+
+Observation:
+The endpoint allows unrestricted access to post data without visible authentication or authorization controls.
+
+Potential Risk:
+Unauthenticated access to application data may result in information disclosure risks.
+
+Risk Level:
+Medium
+
+---
+
+3. /comments
+   Endpoint:
+   https://jsonplaceholder.typicode.com/comments
+
+Observation:
+Comment-related data is accessible publicly through API requests.
+
+Potential Risk:
+Improperly secured APIs may expose sensitive user-generated content in real-world applications.
+
+Risk Level:
+Medium
+
+---
+
+IDENTIFIED API SECURITY RISKS
+
+1. Missing Authentication Controls
+   Risk Level: Medium
+
+Observation:
+Public endpoints can be accessed without tokens or authentication mechanisms.
+
+Business Impact:
+Sensitive information could become accessible to unauthorized users in production environments.
+
+---
+
+2. Excessive Data Exposure
+   Risk Level: Medium
+
+Observation:
+API responses expose multiple fields of user and application data.
+
+Business Impact:
+Attackers may gather unnecessary information useful for reconnaissance or social engineering.
+
+---
+
+3. Lack of Visible Rate Limiting
+   Risk Level: Low
+
+Observation:
+No visible rate-limiting behavior was observed during testing.
+
+Business Impact:
+Attackers may abuse APIs through excessive automated requests.
+
+---
+
+4. Public Endpoint Accessibility
+   Risk Level: Medium
+
+Observation:
+Endpoints are openly accessible through browser requests.
+
+Business Impact:
+Improperly configured public APIs may increase exposure to automated scanning and abuse attempts.
+
+---
+
+REMEDIATION RECOMMENDATIONS
+
+• Implement authentication mechanisms for sensitive endpoints
+• Apply proper authorization and access controls
+• Limit unnecessary data exposure in API responses
+• Enable API rate limiting and request throttling
+• Validate user inputs securely
+• Monitor API traffic for suspicious activity
+
+---
+
+CONCLUSION
+
+The API security assessment identified several common API security concerns, including missing authentication controls, excessive data exposure, and lack of visible rate limiting.
+
+The analysis demonstrates the importance of implementing secure API design principles and proper access controls to reduce security risks in modern applications.
+
+This assessment was conducted ethically using public test APIs and non-intrusive analysis methods for educational purposes only.
